@@ -1,0 +1,29 @@
+<div class="jumbotron text-center">
+    <h1>Contact Page</h1>
+
+    <br/><br/>
+
+    <form>
+        <div class="form-group">
+            <label for="contactEmail">Email address</label>
+            {{input type="email" value=emailAddress class="form-control" id="contactEmail" placeholder="Please type your e-mail address." autofocus="autofocus"}}
+        </div>
+        <div class="form-group">
+            <label for="conactTextarea">Input comments</label>
+            {{textarea class="form-control" id="conactTextarea" placeholder="Your message. (At least 5 characters.)" rows="7" value=message}}
+
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" {{action 'saveMessage'}} disabled={{isDisabled}}>Send message</button>
+    </form>
+
+    <br/><br/>
+
+  {{#if responseMessage}}
+      <div class="alert alert-success">{{responseMessage}}</div>
+  {{/if}}
+
+
+
+
+</div>
+
